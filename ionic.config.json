@@ -1,5 +1,7 @@
 {
   "name": "share_test",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

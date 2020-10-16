@@ -14,7 +14,44 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div id="container">
+
+      <ion-grid *ngFor let single of responseData>
+        <ion-row>
+          <ion-col size="4">
+            <b>Text</b>
+          </ion-col>
+          <ion-col size="8">
+            <span>{{single.text}}</span>
+          </ion-col>
+        </ion-row>
+  
+        <ion-row>
+          <ion-col size="4">
+            <b>Name</b>
+          </ion-col>
+          <ion-col size="8">
+            <span>{{single.name}}</span>
+          </ion-col>
+        </ion-row>
+  
+        <ion-row>
+          <ion-col size="4">
+            <b>Type</b>
+          </ion-col>
+          <ion-col size="8">
+            <span>{{single.type}}</span>
+          </ion-col>
+        </ion-row>
+  
+        <ion-row *ngIf="single.type">
+          <ion-col size="10">
+            <ion-button (click)="openObject(single)">
+              Open
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
   </div>
 </ion-content>
